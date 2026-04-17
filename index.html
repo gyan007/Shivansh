@@ -14,144 +14,114 @@
                         'vedic-red': '#8B0000',
                         'vedic-gold': '#D4AF37',
                         'vedic-cream': '#FFF8E7',
-                    },
-                    fontFamily: {
-                        hindi: ['Tiro Devanagari Hindi', 'serif'],
-                        sans: ['Poppins', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .hindi-font { font-family: 'Tiro Devanagari Hindi', serif; }
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-[#FFF8E7] text-gray-800 m-0 p-0 overflow-x-hidden font-sans; }
+            .hindi-font { font-family: 'Tiro Devanagari Hindi', serif; }
+        }
+        /* मोबाइल पर नेविगेशन को स्क्रॉल करने योग्य बनाने के लिए */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-vedic-cream text-gray-800">
+<body class="hindi-font">
 
-    <nav class="sticky top-0 z-50 bg-vedic-red border-b-4 border-vedic-gold shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-center space-x-4 md:space-x-8 py-4">
-                <a href="#home" class="text-white hover:text-vedic-gold font-bold text-sm md:text-base transition">होम</a>
-                <a href="#events" class="text-white hover:text-vedic-gold font-bold text-sm md:text-base transition">कार्यक्रम</a>
-                <a href="#tradition" class="text-white hover:text-vedic-gold font-bold text-sm md:text-base transition">परंपरा</a>
-                <a href="#venue" class="text-white hover:text-vedic-gold font-bold text-sm md:text-base transition">स्थान</a>
-                <a href="#rsvp" class="text-white hover:text-vedic-gold font-bold text-sm md:text-base transition">दर्शनाभिलाषी</a>
+    <nav class="sticky top-0 z-50 bg-[#8B0000] border-b-2 border-[#D4AF37] shadow-lg">
+        <div class="max-w-full overflow-x-auto hide-scrollbar">
+            <div class="flex justify-start md:justify-center items-center space-x-6 py-4 px-6 min-w-max mx-auto text-white font-bold text-sm md:text-base">
+                <a href="#home" class="hover:text-[#D4AF37] transition whitespace-nowrap">होम</a>
+                <a href="#events" class="hover:text-[#D4AF37] transition whitespace-nowrap">कार्यक्रम</a>
+                <a href="#tradition" class="hover:text-[#D4AF37] transition whitespace-nowrap">परंपरा</a>
+                <a href="#venue" class="hover:text-[#D4AF37] transition whitespace-nowrap">स्थान</a>
+                <a href="#rsvp" class="hover:text-[#D4AF37] transition whitespace-nowrap">दर्शनाभिलाषी</a>
             </div>
         </div>
     </nav>
 
-    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center px-6 py-12 bg-[url('https://www.transparenttextures.com/patterns/paper-fibers.png')]">
-        <img src="ganeshji.jpg" alt="Ganesh Ji" class="w-20 md:w-28 mb-4 drop-shadow-md">
-        <p class="hindi-font text-vedic-red font-bold text-lg">|| श्री गणेशाय नमः ||</p>
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center text-center p-4 md:p-12 bg-white/30">
+        <img src="ganeshji.jpg" alt="Ganesh Ji" class="w-16 md:w-24 mb-4 drop-shadow-md">
+        <p class="text-[#8B0000] font-bold text-base md:text-xl">|| श्री गणेशाय नमः ||</p>
         
-        <h1 class="hindi-font text-4xl md:text-7xl text-vedic-red font-bold my-4">पावन निमंत्रण</h1>
+        <h1 class="text-3xl md:text-6xl lg:text-8xl text-[#8B0000] font-bold my-4 leading-tight">पावन निमंत्रण</h1>
         
-        <div class="relative">
-            <img src="Puchun.png" alt="शिवांश" class="w-48 h-48 md:w-72 md:h-72 rounded-full border-8 border-vedic-gold object-cover shadow-2xl mx-auto my-6">
-            <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-vedic-gold text-vedic-red px-6 py-1 rounded-full font-bold shadow-md hindi-font">
+        <div class="relative my-4 md:my-8">
+            <img src="Puchun.png" alt="शिवांश" class="w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full border-4 md:border-8 border-[#D4AF37] object-cover shadow-2xl mx-auto transition-transform hover:scale-105">
+            <div class="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#D4AF37] text-[#8B0000] px-6 py-1 rounded-full font-bold shadow-md text-sm md:text-xl whitespace-nowrap">
                 शिवांश
             </div>
         </div>
 
-        <h2 class="hindi-font text-2xl md:text-4xl text-vedic-gold font-bold mt-4">आयुष्मान् शिवांश</h2>
-        <p class="hindi-font text-lg md:text-2xl max-w-2xl mt-6 leading-relaxed">
-            "विद्यां ददाति विनयं, विनयाद् याति पात्रताम्।" <br>
-            <span class="text-gray-700">हमारे पुत्र के यज्ञोपवीत संस्कार के शुभ अवसर पर आपकी गरिमामयी उपस्थिति प्रार्थनीय है।</span>
+        <h2 class="text-xl md:text-4xl text-[#D4AF37] font-bold mt-6 tracking-wide">आयुष्मान् शिवांश</h2>
+        <p class="text-base md:text-2xl max-w-lg md:max-w-3xl mt-6 leading-relaxed px-4 text-gray-700">
+            "विद्यां ददाति विनयं, विनयाद् याति पात्रताम्।" <br class="hidden md:block">
+            <span class="italic font-medium">हमारे पुत्र के यज्ञोपवीत संस्कार के शुभ अवसर पर आपकी गरिमामयी उपस्थिति प्रार्थनीय है।</span>
         </p>
     </section>
 
-    <section id="events" class="py-20 px-6 max-w-6xl mx-auto">
-        <h2 class="hindi-font text-3xl md:text-5xl text-center text-vedic-red font-bold mb-16 border-b-4 border-vedic-gold inline-block left-1/2 relative -translate-x-1/2 pb-2">कार्यक्रम विवरण</h2>
+    <section id="events" class="py-12 md:py-20 px-4 md:px-10 max-w-7xl mx-auto">
+        <div class="text-center mb-10 md:mb-16">
+            <h2 class="text-2xl md:text-5xl text-[#8B0000] font-bold inline-block border-b-4 border-[#D4AF37] pb-2">कार्यक्रम विवरण</h2>
+        </div>
         
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="bg-white p-8 rounded-2xl shadow-xl border-l-8 border-vedic-red transform hover:scale-105 transition">
-                <div class="w-24 h-24 bg-vedic-red text-white rounded-full flex flex-col items-center justify-center mx-auto mb-6 border-4 border-vedic-gold">
-                    <span class="text-3xl font-bold">20</span>
-                    <span class="text-sm uppercase">अप्रैल</span>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+            <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl border-t-8 border-[#8B0000]">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-[#8B0000] text-white rounded-full flex flex-col items-center justify-center mx-auto mb-6 border-2 border-[#D4AF37]">
+                    <span class="text-xl md:text-2xl font-bold">20</span>
+                    <span class="text-[10px] md:text-xs uppercase">अप्रैल</span>
                 </div>
-                <h3 class="hindi-font text-2xl text-vedic-red font-bold mb-2">कुम्हरम</h3>
-                <p class="font-bold text-vedic-gold mb-4 text-lg">समय: शाम 04:00 बजे से</p>
-                <p class="text-gray-600">बिहार की पारंपरिक रीति-रिवाजों और मांगलिक गीतों के साथ संस्कार की मधुर शुरुआत।</p>
+                <h3 class="text-xl md:text-3xl text-[#8B0000] font-bold text-center mb-2">प्रथम दिवस: कुम्हरम</h3>
+                <p class="text-center font-bold text-[#D4AF37] text-sm md:text-lg mb-4">समय: शाम 04:00 बजे से</p>
+                <p class="text-gray-600 text-center text-sm md:text-base">बिहार की पारंपरिक रीति-रिवाजों और मांगलिक गीतों के साथ संस्कार की मधुर शुरुआत।</p>
             </div>
 
-            <div class="bg-white p-8 rounded-2xl shadow-xl border-l-8 border-vedic-red transform hover:scale-105 transition">
-                <div class="w-24 h-24 bg-vedic-red text-white rounded-full flex flex-col items-center justify-center mx-auto mb-6 border-4 border-vedic-gold">
-                    <span class="text-3xl font-bold">27</span>
-                    <span class="text-sm uppercase">अप्रैल</span>
+            <div class="bg-white p-6 md:p-10 rounded-3xl shadow-xl border-t-8 border-[#8B0000]">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-[#8B0000] text-white rounded-full flex flex-col items-center justify-center mx-auto mb-6 border-2 border-[#D4AF37]">
+                    <span class="text-xl md:text-2xl font-bold">27</span>
+                    <span class="text-[10px] md:text-xs uppercase">अप्रैल</span>
                 </div>
-                <h3 class="hindi-font text-2xl text-vedic-red font-bold mb-2">मुख्य उपनयन संस्कार</h3>
-                <p class="font-bold text-vedic-gold mb-4 text-lg">मुहूर्त: सुबह 07:30 बजे से</p>
-                <p class="text-gray-600">यज्ञोपवीत धारण, गायत्री मंत्र दीक्षा और भिक्षाटन का मुख्य भव्य कार्यक्रम।</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="tradition" class="bg-white py-20 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="hindi-font text-3xl md:text-5xl text-vedic-red font-bold mb-10">बिहार की परंपरा</h2>
-            <div class="text-left space-y-6 text-lg text-gray-700 hindi-font">
-                <div class="flex items-start">
-                    <span class="text-vedic-gold text-2xl mr-4">●</span>
-                    <p><strong>भिक्षाटन:</strong> बटुक अपनी माता और गुरुजनों से भिक्षा मांगकर जीवन में विनम्रता का संकल्प लेता है।</p>
-                </div>
-                <div class="flex items-start">
-                    <span class="text-vedic-gold text-2xl mr-4">●</span>
-                    <p><strong>गायत्री दीक्षा:</strong> जनेऊ के साथ बटुक को गायत्री मंत्र की दीक्षा दी जाती है, जो ज्ञान के मार्ग को प्रशस्त करती है।</p>
-                </div>
-                <div class="flex items-start">
-                    <span class="text-vedic-gold text-2xl mr-4">●</span>
-                    <p><strong>महाभोज:</strong> बिहारी व्यंजनों (दाल, भात, तरकारी और मिथिलांचल के विशेष व्यंजन) के साथ उत्सव का समापन।</p>
-                </div>
+                <h3 class="text-xl md:text-3xl text-[#8B0000] font-bold text-center mb-2">अंतिम दिवस: जनेऊ</h3>
+                <p class="text-center font-bold text-[#D4AF37] text-sm md:text-lg mb-4">मुहूर्त: सुबह 07:30 बजे से</p>
+                <p class="text-gray-600 text-center text-sm md:text-base">यज्ञोपवीत धारण, गायत्री मंत्र दीक्षा और भिक्षाटन का मुख्य भव्य कार्यक्रम।</p>
             </div>
         </div>
     </section>
 
-   <section id="venue" class="py-20 px-6 max-w-4xl mx-auto">
-    <h2 class="hindi-font text-3xl md:text-5xl text-center text-vedic-red font-bold mb-12">पधारने का स्थान</h2>
-    <div class="bg-vedic-red text-white p-8 rounded-3xl shadow-2xl text-center relative overflow-hidden">
-        <div class="relative z-10">
-            <h3 class="text-2xl font-bold mb-4 text-vedic-gold">निवास स्थान</h3>
-            <p class="hindi-font text-2xl mb-2 font-semibold">ग्राम: हरिहरपुर</p>
-            <p class="text-xl mb-4 italic text-white/90">जिला: दरभंगा, बिहार</p>
-            <p class="text-lg mb-6">संपर्क: +91 74882 89098</p>
-            
-            <div class="mt-4">
+    <section id="venue" class="py-12 md:py-20 px-4 max-w-4xl mx-auto">
+        <h2 class="text-2xl md:text-5xl text-center text-[#8B0000] font-bold mb-8 md:mb-12">पधारने का स्थान</h2>
+        <div class="bg-[#8B0000] text-white p-6 md:p-12 rounded-[2rem] shadow-2xl text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h3 class="text-xl md:text-3xl font-bold mb-4 text-[#D4AF37]">निवास स्थान</h3>
+                <p class="text-xl md:text-3xl mb-2 font-semibold tracking-wide">ग्राम: हरिहरपुर</p>
+                <p class="text-lg md:text-xl mb-4 italic text-white/80">जिला: दरभंगा, बिहार</p>
+                <p class="text-base md:text-2xl mb-8 font-bold text-[#D4AF37]">संपर्क: +91 74882 89098</p>
+                
                 <a href="https://www.google.com/maps?q=26.254529,85.830283" 
                    target="_blank" 
-                   class="inline-flex items-center justify-center bg-vedic-gold text-vedic-red px-10 py-5 rounded-2xl font-bold text-xl hover:bg-yellow-500 transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] group">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-3 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
+                   class="inline-block w-full sm:w-auto bg-[#D4AF37] text-[#8B0000] px-8 md:px-12 py-4 rounded-2xl font-bold text-lg md:text-xl hover:bg-white transition-all shadow-lg active:scale-95">
                     मैप पर रास्ता देखें
                 </a>
-                <p class="text-sm mt-4 text-vedic-gold/80 italic">क्लिक करें और सीधे लोकेशन पर पहुंचें</p>
             </div>
-        </div>
-        
-        <div class="absolute -right-10 -bottom-10 w-48 h-48 bg-vedic-gold/10 rounded-full"></div>
-        <div class="absolute -left-10 -top-10 w-32 h-32 bg-white/5 rounded-full"></div>
-    </div>
-</section>
-
-    <section id="rsvp" class="py-20 px-6 max-w-xl mx-auto">
-        <div class="bg-white p-10 rounded-3xl shadow-2xl border-t-8 border-vedic-gold text-center">
-            
-
-            <div class="w-full h-px bg-gray-200 max-w-xs mx-auto mb-8"></div> 
-
-            <p class="hindi-font text-2xl text-vedic-gold mb-4 underline decoration-vedic-red underline-offset-8">दर्शनाभिलाषी:</p> 
-            <div class="hindi-font space-y-2">
-                <p class="text-2xl text-gray-800 font-bold">रणजीत झा, नेहा झा</p>
-                <p class="text-2xl text-gray-800 font-bold">शैल देवी, जगदीश झा</p>
-                <p class="text-xl text-vedic-red italic font-semibold mt-4">एवं समस्त झा परिवार</p>
-            </div>
-            
-            <p class="mt-8 text-gray-500 text-sm">ग्राम: हरिहरपुर, बिहार</p>
+            <div class="absolute -right-10 -bottom-10 w-32 md:w-64 h-32 md:h-64 bg-white/10 rounded-full"></div>
         </div>
     </section>
+
+    <section id="rsvp" class="py-12 md:py-20 px-4 max-w-2xl mx-auto">
+        <div class="bg-white p-8 md:p-12 rounded-[2rem] shadow-2xl border-t-8 border-[#D4AF37] text-center">
+            <p class="text-xl md:text-3xl text-[#D4AF37] mb-6 underline decoration-[#8B0000] underline-offset-8 font-bold">दर्शनाभिलाषी:</p> 
+            <div class="space-y-3 md:space-y-4">
+                <p class="text-xl md:text-3xl text-gray-800 font-bold">रणजीत झा, नेहा झा</p>
+                <p class="text-xl md:text-3xl text-gray-800 font-bold">शैल देवी, जगदीश झा</p>
+                <p class="text-lg md:text-2xl text-[#8B0000] italic font-semibold mt-4 md:mt-6 leading-tight">एवं समस्त झा परिवार</p>
+            </div>
+            <div class="w-full h-px bg-gray-200 max-w-xs mx-auto my-8"></div> 
+            <p class="text-gray-500 text-xs md:text-sm italic">ग्राम: हरिहरपुर, बिहार</p>
+        </div>
+    </section> 
 
 </body>
 </html>
